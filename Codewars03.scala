@@ -1,6 +1,8 @@
 package tutorialspoint
 
 object SomeTask03 {
+  
+//https://www.codewars.com/kata/twice-linear/train/scala
 
   //[1, 3, 4, 7, 9, 10, 13, 15, 19, 21, 22, 27, ...]
   //y = 2 * x + 1
