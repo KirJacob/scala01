@@ -56,6 +56,32 @@ object SomeTask03 {
     } while (index < 2*n )
     alternative(index - n - correction)
   }
+  
+  def isPrime(n: Long): Boolean = !Range.Long(2, n / 2 + 1, 1).exists(x => n % x == 0)
+
+  def gap(g: Int, m: Long, n: Long): String = {
+    var breakLoop: Boolean = true
+    var result: String = ""
+    var currentNumber: Long = m
+    var firstPrimeNumber: Long = 0
+    var secondPrimeNumber: Long = 0
+    var delta: Long = 0
+    if (g % 2 != 0) breakLoop = false
+    while ((currentNumber < n) && breakLoop) {
+      if (isPrime(currentNumber)) {
+        firstPrimeNumber = secondPrimeNumber
+        secondPrimeNumber = currentNumber
+        if (firstPrimeNumber != 0)
+          delta = secondPrimeNumber - firstPrimeNumber
+        if (delta == g) {
+          breakLoop = false
+          result = "(" + firstPrimeNumber + "," + secondPrimeNumber + ")"
+        }
+      }
+      currentNumber = currentNumber + 1
+    }
+    result
+  }
 
   def main(args: Array[String]): Unit = {
     println("lets code 4th level")
