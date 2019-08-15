@@ -56,6 +56,8 @@ object SomeTask03 {
     } while (index < 2*n )
     alternative(index - n - correction)
   }
+
+  //https://www.codewars.com/kata/gap-in-primes/scala
   
   def isPrime(n: Long): Boolean = !Range.Long(2, n / 2 + 1, 1).exists(x => n % x == 0)
 
